@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Post, Param } from '@nestjs/common';
+import { CreateMessageDto } from './dtos/create-message.dto';
 
 @Controller('messages')
 export class MessagesController {
@@ -12,7 +13,8 @@ export class MessagesController {
   }
 
   @Post()
-  createMessage(@Body() body: any) {
+  //! step 4(apply that class to the request handler)
+  createMessage(@Body() body: CreateMessageDto) {
     //we need to extract body from the incoming request
     console.log(body);
   }
