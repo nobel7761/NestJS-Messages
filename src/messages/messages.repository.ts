@@ -8,7 +8,12 @@ export class MessagesRepository {
     return messages[id];
   }
 
-  async findAll() {}
+  async findAll() {
+    const contents = await readFile('data.json', 'utf-8');
+    const messages = JSON.parse(contents);
 
-  async create(message: string) {}
+    return messages;
+  }
+
+  async create(payload: string) {}
 }
