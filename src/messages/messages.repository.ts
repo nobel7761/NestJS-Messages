@@ -23,5 +23,7 @@ export class MessagesRepository {
     messages[id] = { id, content: payload };
 
     await writeFile('data.json', JSON.stringify(messages));
+
+    return (messages[id] = { id, content: payload });
   }
 }
